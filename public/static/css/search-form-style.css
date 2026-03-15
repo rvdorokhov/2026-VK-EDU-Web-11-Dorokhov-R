@@ -5,6 +5,10 @@
     box-shadow: none;
 }
 
+.search-input {
+    flex: 1;
+}
+
 .search-button {
     color: #2189f9;
     background-color: white;
@@ -13,6 +17,9 @@
 }
 
 .search-form {
+    display: flex;
+    width: 50%;
+
     border-color: white;
     border-style: solid;
     border-width: 0 15px 0 15px;
