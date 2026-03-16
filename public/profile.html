@@ -1,0 +1,98 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Личный кабинет</title>
+  <link rel="icon" type="image/png" href="./static/img/favicon.webp">
+
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/header.css">
+  <link rel="stylesheet" href="./static/css/sidebar.css">
+  <link rel="stylesheet" href="./static/css/main.css">
+  <link rel="stylesheet" href="./static/css/footer.css">
+  <link rel="stylesheet" href="./static/css/questions-and-answers.css">
+  <link rel="stylesheet" href="./static/css/css_bootstrap/bootstrap.min.css">
+
+  <script src="./static/js/js_bootstrap/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <layout>
+    <header class = "nav">
+      <a class="navbar-brand" href="#">
+        <img src="./static/img/logo.webp" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
+      </a>
+
+      <form class="text-form">
+          <input id="search-form" class="search-input" type="text" placeholder="Поиск">
+          <button class="search-button" type="submit">Отправить</button>
+      </form>
+
+      <button class="submit-button" type="button">Создать вопрос</button>
+
+      <!-- Состояние auth -->
+      <a href="#" class="user-block">
+        <span>Личный кабинет</span>
+        <img src="./static/img/user_placeholder.webp" width="45" height="45" alt="User">
+      </a>
+
+      <!-- Состояние unauth
+      <a href="#" class="user-block">
+        <span>Войти</span>
+      </a>
+      <a href="#" class="user-block">
+        <span>Зарегистрироваться</span>
+      </a>
+      -->
+    </header>
+
+    <aside>
+      <tags>
+        <div class="title">Популярные теги</div>
+        <div class="tag">#ялюблюсолбаумнец</div>
+        <div class="tag">#vkeducation</div>
+        <div class="tag">#мгту</div>
+      </tags>
+
+      <members>
+        <div class="title">Заметные участники</div>
+        <div class="member">ММ</div>
+        <div class="member">Комар</div>
+        <div class="member">Таня</div>
+        <div class="member">Паша</div>
+      </members>
+    </aside>
+
+    <main>
+      <forms-box class="signup">
+        <div class="title">Личный кабинет</div>
+        <div class="description-form">Логин</div>
+        <form class="text-form">
+          <input id="login-form" class="input-form" maxlength="30" type="text" placeholder="Введите ваш логин">
+        </form>
+        <div class="description-form">Почта</div>
+        <form class="text-form">
+          <input id="mail-form" type="mail" class="input-form" placeholder="Введите вашу почту">
+        </form>
+        <div class="description-form">Никнейм</div>
+        <form class="text-form">
+          <input id="nickname-form" class="input-form" maxlength="30" type="text" placeholder="Введите ваш никнейм">
+        </form>
+        <div class="description-form">Фотография профиля</div>
+        <photo>
+          <img src="./static/img/user_placeholder.webp" width="135" height="135" alt="User">
+        </photo>
+        <form class="file-form">
+          <input id="photo-form" type="file" class="input-file" accept="image/*">
+        </form>
+        <button class="submit-button" type="button">Сохранить</button>
+      </forms-box>
+    </main>
+
+    <footer>
+      <a href="#">
+        <img src="./static/img/logo.webp" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
+      </a>
+    </footer>
+  </layout>
+</body>
