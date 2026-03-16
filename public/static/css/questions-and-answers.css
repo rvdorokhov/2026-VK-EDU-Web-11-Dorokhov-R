@@ -1,0 +1,158 @@
+question-box {
+    display: grid;
+    grid-template-areas:
+        "photo question creation-time"
+        "description description description"
+        "vote question-tags answers"
+        "pagination pagination pagination";
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    justify-items: start;
+
+    margin: 0px 10px 0px 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+
+photo {
+    grid-area: photo;
+}
+
+photo img {
+    border-radius: 50%;
+}
+
+question {
+    grid-area: question;
+
+    color:#000000ba;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+question:hover {
+    color:black;
+    text-shadow: 0px 0px 3px #2189f9;
+}
+
+description {
+    grid-area: description;
+
+    color:#000000ba;
+    font-size: 16px;
+}
+
+vote {
+    grid-area: vote;
+
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-self: center;
+
+    color:#000000ba;
+}
+
+.vote-arrow:hover{
+    color:black;
+    text-shadow: 0px 0px 3px #2189f9;
+}
+
+question-tags {
+    grid-area: question-tags;
+
+    color:#000000ba;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 5px;
+}
+
+pagination {
+    grid-area: pagination;
+
+    color:#000000ba;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+current-pagination {
+    color:#2189f9;
+}
+
+pagination > a {
+    color:#000000ba;
+    text-decoration: none;
+}
+
+pagination > a:hover{
+    color:black;
+    text-shadow: 0px 0px 3px #2189f9;
+}
+
+creation-time {
+    grid-area: creation-time;
+    color:#00000070;
+
+    justify-self: end;
+}
+
+answers {
+    grid-area: answers;
+    color:#00000070;
+
+    justify-self: end;
+}
+
+answer-box {
+    display: grid;
+    grid-template-areas:
+        "photo nickname creation-time"
+        "description description description"
+        "vote is-correct is-correct";
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    justify-items: start;
+
+    margin: 0px 10px 0px 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+
+photo img {
+    border-radius: 50%;
+}
+
+nickname {
+    grid-area: nickname;
+
+    color:#000000ba;
+    font-size: 20px;
+}
+
+is-correct {
+    grid-area: is-correct;
+
+    color:#09571ac5;
+    font-size: 16px;
+}
+
+user-answer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+}
+
+user-answer > .textarea-form {
+    width: 100%;
+}
