@@ -1,0 +1,167 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вопрос</title>
+  <link rel="icon" type="image/png" href="./static/img/favicon.webp">
+
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/header.css">
+  <link rel="stylesheet" href="./static/css/sidebar.css">
+  <link rel="stylesheet" href="./static/css/main.css">
+  <link rel="stylesheet" href="./static/css/footer.css">
+  <link rel="stylesheet" href="./static/css/questions-and-answers.css">
+  <link rel="stylesheet" href="./static/css/css_bootstrap/bootstrap.min.css">
+
+  <script src="./static/js/js_bootstrap/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <layout>
+    <header class = "nav">
+      <a class="navbar-brand" href="#">
+        <img src="./static/img/logo.webp" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
+      </a>
+
+      <form class="text-form">
+          <input id="search-form" class="search-input" type="text" placeholder="Поиск">
+          <button class="search-button" type="submit">Отправить</button>
+      </form>
+
+      <button class="submit-button" type="button">Создать вопрос</button>
+
+      <!-- Состояние auth -->
+      <a href="#" class="user-block">
+        <span>Личный кабинет</span>
+        <img src="./static/img/user_placeholder.webp" width="45" height="45" alt="User">
+      </a>
+
+      <!-- Состояние unauth
+      <a href="#" class="user-block">
+        <span>Войти</span>
+      </a>
+      <a href="#" class="user-block">
+        <span>Зарегистрироваться</span>
+      </a>
+      -->
+    </header>
+
+    <aside>
+      <tags>
+        <div class="title">Популярные теги</div>
+        <div class="tag">#ялюблюсолбаумнец</div>
+        <div class="tag">#vkeducation</div>
+        <div class="tag">#мгту</div>
+      </tags>
+
+      <members>
+        <div class="title">Заметные участники</div>
+        <div class="member">ММ</div>
+        <div class="member">Комар</div>
+        <div class="member">Таня</div>
+        <div class="member">Паша</div>
+      </members>
+    </aside>
+
+    <main>
+      <question-box>
+        <photo>
+          <a href="#">
+            <img src="./static/img/user_placeholder.webp" width="90" height="90" alt="User">
+          </a>
+        </photo>
+        <question href="#">Как верстать сайты?</question>
+        <creation-time>16 марта 12:40</creation-time>
+        <description>HTML (от англ. HyperText Markup Language — «язык гипертекстовой разметки») — стандартизированный язык гипертекстовой разметки документов для просмотра веб-страниц в браузере...</description>
+        <vote>
+          <div class="vote-arrow">▲</div>
+          <div class="vote-count">5</div>
+          <div class="vote-arrow">▼</div>
+        </vote>
+        <question-tags>
+          <div class="tag">#ялюблюсолбаумнец</div>
+          <div class="tag">#vkeducation</div>
+          <div class="tag">#мгту</div>
+        </question-tags>
+        <answers>5 ответов</answers>
+      </question-box>
+      <user-answer>
+        <form class="textarea-form">
+          <textarea id="user-answer-form" class="input-form" minlength="1" maxlength="4096" placeholder="Присоединитесь к обсуждению..."></textarea>
+        </form>
+        <button class="submit-button" type="button">Ответить</button>
+      </user-answer>
+      <answer-box>
+          <photo>
+            <a href="#">
+              <img src="./static/img/user_placeholder.webp" width="45" height="45" alt="User">
+            </a>
+          </photo>
+          <nickname>
+            Вася Пупкин
+          </nickname>
+          <creation-time>16 марта 12:40</creation-time>
+          <description>
+            Верстать сайты просто! Нужно всего лишь...
+          </description>
+          <vote>
+            <div class="vote-arrow">▲</div>
+            <div class="vote-count">5</div>
+            <div class="vote-arrow">▼</div>
+          </vote>
+          <is-correct>Лучший ответ по мнению автора вопроса</is-correct>
+      </answer-box>
+      <answer-box>
+          <photo>
+            <a href="#">
+              <img src="./static/img/user_placeholder.webp" width="45" height="45" alt="User">
+            </a>
+          </photo>
+          <nickname>
+            Вася Пупкин
+          </nickname>
+          <creation-time>16 марта 12:40</creation-time>
+          <description>
+            Верстать сайты просто! Нужно всего лишь...
+          </description>
+          <vote>
+            <div class="vote-arrow">▲</div>
+            <div class="vote-count">5</div>
+            <div class="vote-arrow">▼</div>
+          </vote>
+      </answer-box>
+      </answer-box>
+      <answer-box>
+          <photo>
+            <a href="#">
+              <img src="./static/img/user_placeholder.webp" width="45" height="45" alt="User">
+            </a>
+          </photo>
+          <nickname>
+            Вася Пупкин
+          </nickname>
+          <creation-time>16 марта 12:40</creation-time>
+          <description>
+            Верстать сайты просто! Нужно всего лишь...
+          </description>
+          <vote>
+            <div class="vote-arrow">▲</div>
+            <div class="vote-count">5</div>
+            <div class="vote-arrow">▼</div>
+          </vote>
+      </answer-box>
+      <pagination>
+        <current-pagination>1</current-pagination>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+      </pagination>
+    </main>
+
+    <footer>
+      <a href="#">
+        <img src="./static/img/logo.webp" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
+      </a>
+    </footer>
+  </layout>
+</body>
