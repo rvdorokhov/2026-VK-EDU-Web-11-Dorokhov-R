@@ -37,28 +37,6 @@ header {
     color: #2189f9;
     background-color: white;
     padding: 1px 0px 1px 12px;
-    
-}
-
-.search-form {
-    display: flex;
-    width: 50%;
-
-    border-color: white;
-    border-style: solid;
-    border-width: 0 15px 0 15px;
-    border-radius: 15px;
-}
-
-.nav-button {
-    color: #2189f9;
-    background-color: white;
-    padding: 1px 12px 1px 12px;
-
-    border-color: white;
-    border-style: solid;
-    border-width: 0 15px 0 15px;
-    border-radius: 15px;
 }
 
 .user-block {
