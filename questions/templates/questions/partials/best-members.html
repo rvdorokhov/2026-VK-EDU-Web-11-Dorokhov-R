@@ -1,0 +1,4 @@
+       <div class="title">Заметные участники</div>
+        {% for member in members %}
+          <a class="member" href="{% url 'questions:user' %}">{{ member.name }}</a>
+        {% endfor %}
