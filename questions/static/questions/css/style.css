@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+layout {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main sidebar"
+        "footer footer";
+    grid-template-columns: 1fr 30%;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    gap: 15px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.text-form, .textarea-form {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+
+    border-color: white;
+    border-style: solid;
+    border-width: 0 15px 0 15px;
+    border-radius: 15px;
+}
+
+.textarea-form {
+    border-width: 0 15px 15px 15px;
+}
+
+.input-form {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    flex: 1;
+}
+
+.submit-button {
+    color: #2189f9;
+    background-color: white;
+    padding: 1px 12px 1px 12px;
+
+    border-color: white;
+    border-style: solid;
+    border-width: 0 15px 0 15px;
+    border-radius: 15px;
+}
+
+.input-file {
+    color:#000000ba;
+    font-size: 16px;
+}
+
+.input-file::file-selector-button {
+    color: #2189f9;
+    background-color: white;
+    padding: 1px 12px;
+
+    border-color: white;
+    border-style: solid;
+    border-width: 0 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+forms-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    align-items: center;
+}
+
+.login > .text-form,
+.login > .textarea-form {
+    width: 40%;
+}
+
+.signup > .text-form,
+.signup > .textarea-form {
+    width: 40%;
+}
+
+.ask > .text-form,
+.ask > .textarea-form {
+    width: 60%;
+}
+
+.description-form {
+    color:#000000ba;
+    font-size: 16px;
+}
+
+a.submit-button {
+    text-decoration: none;
+}
+
+.photo-small {
+    width: 45px;
+    height: 45px;
+}
+
+.photo-large {
+    width: 90px;
+    height: 90px;
+}
+
+@media (max-width: 768px) {
+    layout {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .login > .text-form,
+    .login > .textarea-form {
+        width: 100%;
+    }
+
+    .signup > .text-form,
+    .signup > .textarea-form {
+        width: 100%;
+    }
+
+    .ask > .text-form,
+    .ask > .textarea-form {
+        width: 100%;
+    }
+
+    .photo-large {
+        width: 60px;
+        height: 60px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+}
