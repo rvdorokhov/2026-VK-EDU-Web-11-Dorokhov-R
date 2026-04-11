@@ -1,0 +1,19 @@
+        <question-box>
+            {% include 'questions/partials/photo.html' with photo_url=question.user.photo profile_url=question.user.url photo_class=photo_class %}
+          <question>
+              <a href="{% url 'questions:question' question.id %}">{{ question.title }}</a>
+          </question>
+          <creation-time> {{ question.date }} </creation-time>
+          <description>{{ question.text }}</description>
+          <vote>
+            <a href="#" class="vote-arrow">▲</a>
+            <div class="vote-count"> {{ question.vote_count }} </div>
+            <a href="#" class="vote-arrow">▼</a>
+          </vote>
+          <question-tags>
+            {% for tag in question.tags %}
+              <a class="tag" href="{% url 'questions:tag' tag.name %}">{{ tag.name }}</a>
+            {% endfor %}
+          </question-tags>
+          <answers> {{ question.number_of_answers }} </answers>
+        </question-box>
