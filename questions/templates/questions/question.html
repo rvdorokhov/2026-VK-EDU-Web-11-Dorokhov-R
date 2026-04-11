@@ -1,0 +1,21 @@
+{% extends 'questions/layout/base.html' %}
+
+{% block title %}
+    {{ question.title }}
+{% endblock %}
+
+{% block content %}
+        {% with photo_class='photo-large' %}
+          {% include 'questions/partials/question-box.html' %}
+        {% endwith %}
+
+        {% include 'questions/partials/answer-input.html' %}
+
+        {% for answer in answers %}
+            {% with photo_class='photo-small' %}
+              {% include 'questions/partials/answer-box.html' %}
+            {% endwith %}
+        {% endfor %}
+
+      {% include 'questions/partials/pagination.html' %}
+{% endblock %}
