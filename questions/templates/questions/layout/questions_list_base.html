@@ -1,0 +1,22 @@
+{% extends 'questions/layout/base.html' %}
+
+{% block title %}
+    {% block page_title %} Вопросы {% endblock %}
+{% endblock %}
+
+{% block content %}
+    <div class="title">
+        {% block page_header %}Вопросы{% endblock %}
+    
+        {% block page_link %}
+            <a href="{% url 'questions:index' %}">Вопросы</a>
+        {% endblock %}
+    </div>
+      {% for question in questions %}
+        {% with photo_class='photo-small' %}
+          {% include 'questions/partials/question-box.html' %}
+        {% endwith %}
+      {% endfor %}
+
+    {% include 'questions/partials/pagination.html' %}
+{% endblock %}

@@ -1,0 +1,80 @@
+{% load static %}
+
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> {% block title %} Главная {% endblock %} </title>
+  <link rel="icon" type="image/png" href="{% static 'questions/img/favicon.webp' %}">
+
+  <link rel="stylesheet" href="{% static 'questions/css/css_bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'questions/css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'questions/css/sidebar.css' %}">
+  <link rel="stylesheet" href="{% static 'questions/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'questions/css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'questions/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'questions/css/questions-and-answers.css' %}">
+
+  <script src="{% static 'questions/js/js_bootstrap/bootstrap.bundle.min.js' %}"></script>
+</head>
+<body>
+  <layout>
+    <header class = "nav">
+      <logo>
+        <a class="navbar-brand" href="{% url 'questions:index' %}">
+          <img src="{% static 'questions/img/logo.webp'%}" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
+        </a>
+      </logo>
+
+      <search>
+        <form class="text-form">
+          <input id="search-form" class="search-input" type="text" placeholder="Поиск">
+          <button class="search-button" type="submit">Найти</button>
+        </form>
+      </search>
+
+      <ask>
+        <a class="submit-button" href="{% url 'questions:ask' %}">Создать вопрос</a>
+      </ask>
+
+      <profile>
+          <!-- Состояние auth -->
+        <a href="{% url 'questions:profile' %}" class="user-block">
+          <span>Личный кабинет</span>
+          <img src="{% static 'questions/img/user_placeholder.webp'%}" class="photo-small" alt="User">
+        </a>
+
+        <!-- Состояние unauth
+        <a href="{% url 'questions:login' %}" class="user-block">
+          <span>Войти</span>
+        </a>
+        <a href="#" class="user-block">
+          <span>Зарегистрироваться</span>
+        </a>
+        -->
+      </profile>
+    </header>
+
+    <aside>
+      <tags>
+        {% include 'questions/partials/tags.html' %}
+      </tags>
+
+      <members>
+        {% include 'questions/partials/best-members.html' %}
+      </members>
+    </aside>
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+    <footer>
+      <a href="{% url 'questions:index' %}">
+        <img src="{% static 'questions/img/logo.webp' %}" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
+      </a>
+    </footer>
+  </layout>
+</body>
