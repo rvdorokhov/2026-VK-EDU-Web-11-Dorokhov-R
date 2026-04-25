@@ -1,0 +1,18 @@
+        <answer-box>
+            {% include 'questions/partials/photo.html' with photo_url=answer.user.photo profile_url=answer.user.url photo_class=photo_class %}
+          <nickname>
+              <a href="{% url 'questions:user' %}">
+                {{ answer.user.name }}
+              </a>
+          </nickname>
+          <creation-time> {{ answer.date }} </creation-time>
+          <description> {{ answer.text }} </description>
+          <vote>
+            <a href="#" class="vote-arrow">▲</a>
+            <div class="vote-count"> {{ answer.vote_count }} </div>
+            <a href="#" class="vote-arrow">▼</a>
+          </vote>
+            {% if answer.is_correct %}
+                <is-correct>Лучший ответ по мнению автора вопроса</is-correct>
+            {% endif %}
+      </answer-box>

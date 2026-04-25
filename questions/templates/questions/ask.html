@@ -1,0 +1,24 @@
+{% extends 'questions/layout/base.html' %}
+
+{% block title %}
+    Задать вопрос
+{% endblock %}
+
+{% block content %}
+      <forms-box class="ask">
+        <div class="title">Новый вопрос</div>
+        <div class="description-form">Ваш вопрос</div>
+        <form class="text-form">
+          <input id="question-form" class="input-form" maxlength="128" type="text" placeholder="Какой у вас вопрос?">
+        </form>
+        <div class="description-form">Описание вопроса</div>
+        <form class="textarea-form">
+          <textarea id="question-description-form" class="input-form" maxlength="4096" placeholder="Опишите вашу проблему"></textarea>
+        </form>
+        <div class="description-form">Теги</div>
+        <form class="text-form">
+          <input id="tags-form" class="input-form" maxlength="128" type="text" placeholder="Поле для тегов">
+        </form>
+        <button class="submit-button" type="button">Создать вопрос</button>
+      </forms-box>
+{% endblock %}

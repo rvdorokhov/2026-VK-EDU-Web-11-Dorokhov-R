@@ -1,0 +1,4 @@
+        <div class="title">Популярные теги</div>
+        {% for tag in tags %}
+          <a class="tag" href="{% url 'questions:tag' tag.name %}">#{{ tag.name }}</a>
+        {% endfor %}

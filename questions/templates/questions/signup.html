@@ -1,0 +1,36 @@
+{% extends 'questions/layout/base.html' %}
+
+{% block title %}
+    Регистрация
+{% endblock %}
+
+{% block content %}
+      <forms-box class="signup">
+        <div class="title">Регистрация</div>
+        <div class="description-form">Логин</div>
+        <form class="text-form">
+          <input id="login-form" class="input-form" type="text" maxlength="30" placeholder="Введите ваш логин">
+        </form>
+        <div class="description-form">Почта</div>
+        <form class="text-form">
+          <input id="mail-form" type="email" class="input-form" placeholder="Введите вашу почту">
+        </form>
+        <div class="description-form">Никнейм</div>
+        <form class="text-form">
+          <input id="nickname-form" class="input-form" type="text" maxlength="30" placeholder="Введите ваш никнейм">
+        </form>
+        <div class="description-form">Пароль</div>
+        <form class="text-form">
+          <input id="password-form" type="password" required minlength="8" maxlength="30" class="input-form" placeholder="Введите ваш пароль">
+        </form>
+        <div class="description-form">Повторите пароль</div>
+        <form class="text-form">
+          <input id="repeat-password-form" type="password" required minlength="8" maxlength="30" class="input-form" placeholder="Повторите пароль">
+        </form>
+        <div class="description-form">Фотография профиля</div>
+        <form class="file-form">
+          <input id="photo-form" type="file" class="input-file" accept="image/*">
+        </form>
+        <button class="submit-button" type="button">Зарегистрироваться</button>
+      </forms-box>
+{% endblock %}
