@@ -1,4 +1,4 @@
-{% extends 'questions/layout/base.html' %}
+{% extends 'core/layout/base.html' %}
 {% load static %}
 
 {% block title %}
@@ -21,8 +21,8 @@
           <input id="nickname-form" class="input-form" maxlength="30" type="text" placeholder="Введите ваш никнейм">
         </form>
         <div class="description-form">Фотография профиля</div>
-        {% static 'questions/img/user_placeholder.webp' as placeholder_url %}
-        {% include 'questions/partials/photo.html' with photo_url=placeholder_url photo_class='photo-large' %}
+        {% static 'core/img/user_placeholder.webp' as placeholder_url %}
+        {% include 'core/partials/photo.html' with photo_url=placeholder_url photo_class='photo-large' %}
         <form class="file-form">
           <input id="photo-form" type="file" class="input-file" accept="image/*">
         </form>

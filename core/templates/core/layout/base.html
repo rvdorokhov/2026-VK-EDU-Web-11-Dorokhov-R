@@ -6,24 +6,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> {% block title %} Главная {% endblock %} </title>
-  <link rel="icon" type="image/png" href="{% static 'questions/img/favicon.webp' %}">
+  <link rel="icon" type="image/png" href="{% static 'core/img/favicon.webp' %}">
 
-  <link rel="stylesheet" href="{% static 'questions/css/css_bootstrap/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'questions/css/header.css' %}">
-  <link rel="stylesheet" href="{% static 'questions/css/sidebar.css' %}">
-  <link rel="stylesheet" href="{% static 'questions/css/main.css' %}">
-  <link rel="stylesheet" href="{% static 'questions/css/footer.css' %}">
-  <link rel="stylesheet" href="{% static 'questions/css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'questions/css/questions-and-answers.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/css_bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/sidebar.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/questions-and-answers.css' %}">
 
-  <script src="{% static 'questions/js/js_bootstrap/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'core/js/js_bootstrap/bootstrap.bundle.min.js' %}"></script>
 </head>
 <body>
   <layout>
     <header class = "nav">
       <logo>
         <a class="navbar-brand" href="{% url 'questions:index' %}">
-          <img src="{% static 'questions/img/logo.webp'%}" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
+          <img src="{% static 'core/img/logo.webp'%}" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
         </a>
       </logo>
 
@@ -40,13 +40,13 @@
 
       <profile>
           <!-- Состояние auth -->
-        <a href="{% url 'questions:profile' %}" class="user-block">
+        <a href="{% url 'core:profile' %}" class="user-block">
           <span>Личный кабинет</span>
-          <img src="{% static 'questions/img/user_placeholder.webp'%}" class="photo-small" alt="User">
+          <img src="{% static 'core/img/user_placeholder.webp'%}" class="photo-small" alt="User">
         </a>
 
         <!-- Состояние unauth
-        <a href="{% url 'questions:login' %}" class="user-block">
+        <a href="{% url 'core:login' %}" class="user-block">
           <span>Войти</span>
         </a>
         <a href="#" class="user-block">
@@ -58,11 +58,11 @@
 
     <aside>
       <tags>
-        {% include 'questions/partials/tags.html' %}
+        {% include 'core/partials/tags.html' %}
       </tags>
 
       <members>
-        {% include 'questions/partials/best-members.html' %}
+        {% include 'core/partials/best-members.html' %}
       </members>
     </aside>
 
@@ -73,7 +73,7 @@
 
     <footer>
       <a href="{% url 'questions:index' %}">
-        <img src="{% static 'questions/img/logo.webp' %}" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
+        <img src="{% static 'core/img/logo.webp' %}" alt="Logo" width="90" height="45" class="d-inline-block align-text-top">
       </a>
     </footer>
   </layout>

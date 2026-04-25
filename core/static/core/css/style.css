@@ -22,7 +22,6 @@ layout {
 .text-form, .textarea-form {
     display: flex;
     width: 100%;
-    max-width: 800px;
 
     border-color: white;
     border-style: solid;

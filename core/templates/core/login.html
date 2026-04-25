@@ -1,4 +1,4 @@
-{% extends 'questions/layout/base.html' %}
+{% extends 'core/layout/base.html' %}
 
 {% block title %}
     Войти
@@ -16,6 +16,6 @@
           <input id="password-form" type="password" required minlength="8" maxlength="30" class="input-form" placeholder="Введите ваш пароль">
         </form>
         <button class="submit-button" type="button">Войти</button>
-        <a class="submit-button" href="{% url 'questions:signup' %}">Регистрация</a>
+        <a class="submit-button" href="{% url 'core:signup' %}">Регистрация</a>
       </forms-box>
 {% endblock %}

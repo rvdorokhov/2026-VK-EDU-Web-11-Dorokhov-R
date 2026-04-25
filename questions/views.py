@@ -3,6 +3,7 @@ from .utils import paginate
 from .utils import find_tag_by_name
 from .utils import find_question_by_id
 from .utils import get_filtred_questions
+from django.templatetags.static import static
 
 TAGS = [
     {
@@ -18,7 +19,7 @@ MEMBERS = [
         'id': i,
         'name': f'User {i}',
         'url': 'http://127.0.0.1:8000/',
-        'photo': '../../static/questions/img/user_placeholder.webp',
+        'photo': static('core/img/user_placeholder.webp'),
     }
 
     for i in range(5)
@@ -87,36 +88,6 @@ def ask(request):
         'questions/ask.html',
         context={
             'questions': QUESTIONS[::10],
-            'tags': TAGS,
-            'members': MEMBERS
-        }
-        )
-
-def profile(request):
-    return render(
-        request,
-        'questions/profile.html',
-        context={
-            'tags': TAGS,
-            'members': MEMBERS
-        }
-        )
-
-def login(request):
-    return render(
-        request,
-        'questions/login.html',
-        context={
-            'tags': TAGS,
-            'members': MEMBERS
-        }
-        )
-
-def signup(request):
-    return render(
-        request,
-        'questions/signup.html',
-        context={
             'tags': TAGS,
             'members': MEMBERS
         }

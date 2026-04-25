@@ -1,5 +1,5 @@
         <answer-box>
-            {% include 'questions/partials/photo.html' with photo_url=answer.user.photo profile_url=answer.user.url photo_class=photo_class %}
+            {% include 'core/partials/photo.html' with photo_url=answer.user.photo profile_url=answer.user.url photo_class=photo_class %}
           <nickname>
               <a href="{% url 'questions:user' %}">
                 {{ answer.user.name }}
