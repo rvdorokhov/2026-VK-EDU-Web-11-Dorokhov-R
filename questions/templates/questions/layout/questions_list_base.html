@@ -12,11 +12,19 @@
             <a href="{% url 'questions:index' %}">Вопросы</a>
         {% endblock %}
     </div>
-      {% for question in questions %}
+      {% for question in page_obj %}
         {% with photo_class='photo-small' %}
           {% include 'questions/partials/question-box.html' %}
         {% endwith %}
-      {% endfor %}
+      {% empty %}
+        <div>
+            {% block empty_text %}
+                Пока нет ни одного вопроса.
+            {% endblock %}
+        </div>
+    {% endfor %}
 
-    {% include 'questions/partials/pagination.html' %}
+    {% if page_obj.paginator.num_pages > 1 %}
+        {% include 'questions/partials/pagination.html' %}
+    {% endif %}
 {% endblock %}

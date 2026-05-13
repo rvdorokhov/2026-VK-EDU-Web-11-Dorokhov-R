@@ -10,19 +10,19 @@
         <div class="title">Личный кабинет</div>
         <div class="description-form">Логин</div>
         <form class="text-form">
-          <input id="login-form" class="input-form" maxlength="30" type="text" placeholder="Введите ваш логин">
+          <input id="login-form" class="input-form" maxlength="30" type="text" placeholder="{{ user.username }}">
         </form>
         <div class="description-form">Почта</div>
         <form class="text-form">
-          <input id="mail-form" type="mail" class="input-form" placeholder="Введите вашу почту">
+          <input id="mail-form" type="mail" class="input-form" placeholder="{{ user.email }}">
         </form>
         <div class="description-form">Никнейм</div>
         <form class="text-form">
-          <input id="nickname-form" class="input-form" maxlength="30" type="text" placeholder="Введите ваш никнейм">
+          <input id="nickname-form" class="input-form" maxlength="30" type="text" placeholder="{{ user.profile.nickname }}">
         </form>
         <div class="description-form">Фотография профиля</div>
         {% static 'core/img/user_placeholder.webp' as placeholder_url %}
-        {% include 'core/partials/photo.html' with photo_url=placeholder_url photo_class='photo-large' %}
+        {% include 'core/partials/photo.html' with photo_url=user.profile.avatar.url photo_class='photo-large' %}
         <form class="file-form">
           <input id="photo-form" type="file" class="input-file" accept="image/*">
         </form>

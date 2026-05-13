@@ -1,7 +1,7 @@
 {% extends 'questions/layout/questions_list_base.html' %}
 
 {% block page_title %}
-    #{{ tag_name }}
+    #{{ tag.name }}
 {% endblock %}
 
 {% block page_link_name %}
@@ -15,5 +15,9 @@
 {% endblock %}
 
 {% block page_header %}
-    Вопросы по тегу #{{ tag_name }}
+    Вопросы по тегу #{{ tag.name }}
+{% endblock %}
+
+{% block empty_text %}
+    Пока нет ни одного вопроса с тегом #{{ tag.name }}.
 {% endblock %}

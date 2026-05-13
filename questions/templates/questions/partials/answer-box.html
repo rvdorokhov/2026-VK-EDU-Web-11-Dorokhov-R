@@ -1,12 +1,12 @@
         <answer-box>
-            {% include 'core/partials/photo.html' with photo_url=answer.user.photo profile_url=answer.user.url photo_class=photo_class %}
+            {% include 'core/partials/photo.html' with photo_url=answer.user.profile.avatar.url profile_url=answer.user.url photo_class=photo_class %}
           <nickname>
               <a href="{% url 'questions:user' %}">
-                {{ answer.user.name }}
+                {{ answer.user.profile.nickname }}
               </a>
           </nickname>
-          <creation-time> {{ answer.date }} </creation-time>
-          <description> {{ answer.text }} </description>
+          <creation-time> {{ answer.creation_time }} </creation-time>
+          <description> {{ answer.answer_text }} </description>
           <vote>
             <a href="#" class="vote-arrow">▲</a>
             <div class="vote-count"> {{ answer.vote_count }} </div>
