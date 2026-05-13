@@ -1,4 +1,4 @@
-{% extends 'questions/layout/base.html' %}
+{% extends 'core/layout/base.html' %}
 
 {% block title %}
     {{ question.title }}
@@ -11,11 +11,17 @@
 
         {% include 'questions/partials/answer-input.html' %}
 
-        {% for answer in answers %}
+        {% for answer in page_obj %}
             {% with photo_class='photo-small' %}
               {% include 'questions/partials/answer-box.html' %}
             {% endwith %}
+            {% empty %}
+            <div>
+                Пока нет ни одного ответа к этому вопросу.
+            </div>
         {% endfor %}
 
-      {% include 'questions/partials/pagination.html' %}
+        {% if page_obj.paginator.num_pages > 1 %}
+            {% include 'questions/partials/pagination.html' %}
+        {% endif %}
 {% endblock %}

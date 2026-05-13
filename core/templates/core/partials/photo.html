@@ -1,5 +1,5 @@
          <photo>
-            <a href="{% url 'questions:user' %}">
+            <a href="{{ profile_url|default:'#' }}">
               <img src="{{ photo_url }}" class="{{ photo_class }}" alt="{{ user }}">
             </a>
           </photo>

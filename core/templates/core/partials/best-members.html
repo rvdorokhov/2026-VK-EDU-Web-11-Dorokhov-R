@@ -1,0 +1,4 @@
+       <div class="title">Заметные участники</div>
+        {% for member in best_members %}
+          <a class="member" href="{% url 'questions:user' %}">{{ member.profile.nickname }}</a>
+        {% endfor %}
