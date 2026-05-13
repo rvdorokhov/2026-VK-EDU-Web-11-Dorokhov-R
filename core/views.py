@@ -1,33 +1,22 @@
 from django.shortcuts import render
-from django.templatetags.static import static
 
-TAGS = [
-    {
-        'id': i,
-        'name': f'tag{i}',
-    }
+from core.models import User
 
-    for i in range(5)
-]
-
-MEMBERS = [
-    {
-        'id': i,
-        'name': f'User {i}',
-        'url': 'http://127.0.0.1:8000/',
-        'photo': static('core/img/user_placeholder.webp'),
-    }
-
-    for i in range(5)
-]
 
 def profile(request):
+    user_obj = ( # пока что так, пока нет полноценной авторизации
+        User.objects
+        .select_related("profile")
+        .filter(profile__isnull=False)
+        .order_by("id")
+        .first()
+    )
+
     return render(
         request,
         'core/profile.html',
-        context={
-            'tags': TAGS,
-            'members': MEMBERS
+        context= {
+            'user': user_obj,
         }
         )
 
@@ -36,8 +25,7 @@ def login(request):
         request,
         'core/login.html',
         context={
-            'tags': TAGS,
-            'members': MEMBERS
+
         }
         )
 
@@ -46,7 +34,6 @@ def signup(request):
         request,
         'core/signup.html',
         context={
-            'tags': TAGS,
-            'members': MEMBERS
+
         }
         )

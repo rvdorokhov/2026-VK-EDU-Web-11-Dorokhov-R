@@ -6,8 +6,21 @@ class Question(models.Model):
     description = models.TextField(verbose_name="Описание вопроса")
     creation_time = models.DateTimeField(verbose_name="Дата создания", auto_now_add=True)
     vote_count = models.IntegerField(verbose_name="Рейтинг голосов ↑ / ↓", default=0)
+    answers_count = models.PositiveIntegerField(verbose_name="Количество ответов", default=0) 
 
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="questions"
+    )
+
+    tags = models.ManyToManyField(
+        "Tag",
+        through="QuestionTag",
+        related_name="questions",
+        blank=True,
+    )
 
     class Meta:
         verbose_name = "Вопрос"
@@ -19,7 +32,7 @@ class Question(models.Model):
 
 
 class Tag(models.Model):
-    name = models.CharField(verbose_name="Название тега", max_length=32)
+    name = models.CharField(verbose_name="Название тега", unique=True, max_length=32)
 
     class Meta:
         verbose_name = "Тег"
@@ -40,7 +53,7 @@ class QuestionTag(models.Model):
         unique_together = ('question', 'tag')
 
     def __str__(self):
-        return f"{self.question[:50]} - {self.tag}"
+        return f"{str(self.question)[:50]} - {self.tag}"
 
 
 
@@ -50,8 +63,18 @@ class Answer(models.Model):
     is_correct = models.BooleanField(verbose_name="Выбран ли автором как правильный", default=False)
     vote_count = models.IntegerField(verbose_name="Рейтинг голосов ↑ / ↓", default=0)
 
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="answers"
+    )
+
+    question = models.ForeignKey(
+        Question,
+        on_delete=models.CASCADE,
+        related_name="answers"
+    )
 
     class Meta:
         verbose_name = "Ответ"

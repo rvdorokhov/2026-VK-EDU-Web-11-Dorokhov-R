@@ -11,6 +11,7 @@ class QuestionAdmin(admin.ModelAdmin):
         "short_description",
         "creation_time",
         "vote_count",
+        "answers_count",
 
         "user__id",
         "user__email",
@@ -51,7 +52,6 @@ class QuestionAdmin(admin.ModelAdmin):
         readonly_fields = (
             "vote_count",
             "creation_time",
-            "user",
         )
 
         raw_id_fields = (

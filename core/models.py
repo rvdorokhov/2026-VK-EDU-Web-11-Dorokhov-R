@@ -15,13 +15,18 @@ class User(AbstractUser):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, verbose_name="Пользователь", on_delete=models.CASCADE, )
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        verbose_name="Пользователь",
+        related_name="profile",
+        on_delete=models.CASCADE, )
 
     nickname = models.CharField(verbose_name="Никнейм", max_length=64)
 
     avatar = models.ImageField(
         verbose_name="Фотография профиля",
         upload_to="avatars/",
+        default="avatars/user_placeholder.webp",
         null=True,
         blank=True
     )

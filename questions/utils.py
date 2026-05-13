@@ -15,17 +15,6 @@ def paginate(objects_list, request, per_page=PAGE_SIZE):
 
     return page_obj
 
-def get_filtred_questions(questions, filter_tag):
-    new_questions = []
-
-    for question in questions:
-        for tag in question['tags']:
-            if tag['name'] == filter_tag:
-                new_questions.append(question)
-                break
-
-    return new_questions
-
 def find_tag_by_name(tags, tag_name):
     for tag in tags:
         if tag['name'] == tag_name:
